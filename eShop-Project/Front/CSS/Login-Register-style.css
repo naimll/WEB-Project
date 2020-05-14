@@ -90,3 +90,39 @@ header button{
  
  transition: .3s;
 }
+.box1-content span{
+    position: absolute;
+    font-size:16px ;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(221, 64, 64);
+    visibility: hidden;
+}
+.error{
+border-color: rgb(221, 64, 64)
+   
+}
+#nameError{
+    top: 75px;
+}
+#lastnameError{
+    top: 148px;
+}
+#emailError{
+    top: 220px;
+}
+#passwordError{
+    top: 295px;
+}
+#login-form span{
+    position: absolute;
+    font-size:16px ;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(221, 64, 64);
+    visibility: hidden;
+}
+#loginEmailError{
+    top:74px;
+}
+#loginPasswordError{
+    top: 149px;
+}
