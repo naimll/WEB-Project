@@ -129,3 +129,114 @@ function validateUserToLogin() {
         passwordL.classList.remove("error");
     }
 }
+
+
+//Contact validation
+$(function(){
+    $('#contact-nameError').hide();
+    $('#contact-lastnameError').hide();
+    $('#contact-emailError').hide();
+    $('#contact-messageError').hide();
+    $('#contact-selectError').hide();
+    $('#contact-ageError').hide();
+
+    $('#contact-name').focusout(function(){
+        checkContactName();
+    });
+    $('#contact-lastname').focusout(function(){
+        checkContactLastname();
+    });
+    $('#contact-email').focusout(function(){
+        checkContactEmail();
+    });
+    $('#message-area').focusout(function(){
+        checkContactMessage();
+    });
+    $('#contact-country').focusout(function(){
+        checkContactCountry();
+    });
+    $('#contact-age').focusout(function(){
+        checkContactAge();
+    });
+    $('#contact-area').focus(function(){
+        checkContactCountry();
+    });
+
+    function checkContactName(){
+        var name=$('#contact-name').val();
+        var letters = /^[A-Za-z]+$/;
+        if(name==''||name==null){
+            $('#contact-nameError').text('Name cannot be blank');
+            $('#contact-nameError').show();
+        }else if(name.length<5||name.length>20){
+            $('#contact-nameError').text('Name should be between 5-20 characters');
+            $('#contact-nameError').show();
+        }else if(!lastname.match(letters))
+        {
+          $('#contact-lastnameError').text('Enter alphabets only');
+          $('#contact-lastnameError').show();
+        }
+        else{
+            $('#contact-nameError').hide();
+        }
+    };
+    function checkContactLastname(){
+        var lastname=$('#contact-lastname').val();
+        var letters = /^[A-Za-z]+$/;
+        if(lastname==''||lastname==null){
+            $('#contact-lastnameError').text('LastName cannot be blank');
+            $('#contact-lastnameError').show();
+        }else if(lastname.length<5||lastname.length>20){
+            $('#contact-lastnameError').text('Lastname should be between 5-20 characters');
+            $('#contact-lastnameError').show();
+        }else if(!lastname.match(letters))
+        {
+          $('#contact-lastnameError').text('Enter alphabets only');
+          $('#contact-lastnameError').show();
+        }
+        
+        else{
+            $('#contact-lastnameError').hide();
+        }
+    }
+    function checkContactEmail(){
+        let email=$('#contact-email').val();
+        if(email==''||email==null){
+            $('#contact-emailError').text('Email cannot be blank');
+            $('#contact-emailError').show();
+        }else if(!validateEmail(email)){
+            $('#contact-emailError').text('Not a valid email address');
+            $('#contact-emailError').show();
+        }else{
+            $('#contact-emailError').hide();
+        }
+    }
+    function checkContactMessage(){
+        var message=$('#contact-lastname').val();
+        if(message==''||message==null){
+            $('#contact-messageError').text('Message cannot be blank');
+            $('#contact-messageError').show();
+        }else{
+            $('#contact-messageError').hide();
+        }
+    }
+    function checkContactCountry(){
+        var country=$('#contact-country option:selected').text();
+        
+        if(country=='Country'){
+            
+            $('#contact-selectError ').text('Please select country');
+            $('#contact-selectError').show();
+        }else{
+            $('#contact-selectError').hide();
+    }
+    }
+    function checkContactAge(){
+        var age=$('#contact-age').text();
+        if(age==''||age<1||age>100){
+            $('#contact-ageError').text('The age must be a number between 1 and 100 ');
+            $('#contact-ageError').show();
+        }
+    }
+})
+
