@@ -16,7 +16,8 @@ body{
     
     height: 50px;
     color:white;
-    background-color: rgb(49, 49, 179);
+    background: -webkit-linear-gradient(top, rgb(33, 95, 219) 5%,rgba(54, 106, 211, 0.95) 10%,rgba(97, 179, 241, 0.92) 100%);   
+
 } 
 .banner-contact p{
     padding-top: 9px;
@@ -67,7 +68,7 @@ body{
 }
 #contact-submit{
     width: 68%;
-    background-color: rgb(48, 137, 155);
+    background-color: rgb(33, 95, 219);
 }
 .col-span{
     display: flex;
